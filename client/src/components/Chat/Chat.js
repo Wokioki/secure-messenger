@@ -11,7 +11,7 @@ const ChatBox = ({ user, onLogout }) => {
 
   const fetchUsers = async () => {
     try {
-      const res = await API.get('/auth/users');
+      const res = await API.get('/api/auth/users');
       const filtered = res.data.filter(u => u !== user);
       setUsers(filtered);
       if (!selectedUser && filtered.length > 0) {
@@ -25,7 +25,7 @@ const ChatBox = ({ user, onLogout }) => {
   const fetchMessages = useCallback(async () => {
     if (selectedUser) {
       try {
-        const res = await API.get('/messages/chat', {
+        const res = await API.get('/api/messages/chat', {
           params: { user1: user, user2: selectedUser },
         });
         setMessages(res.data);
@@ -57,7 +57,7 @@ const ChatBox = ({ user, onLogout }) => {
   const handleSend = async () => {
     if (!newMessage.trim() || selectedUser === user) return;
     try {
-      await API.post('/messages/send', null, {
+      await API.post('/api/messages/send', null, {
         params: {
           sender: user,
           receiver: selectedUser,
