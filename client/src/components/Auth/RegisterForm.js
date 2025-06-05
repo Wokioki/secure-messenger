@@ -9,7 +9,7 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await API.post('/auth/register', { email, password });
+      const res = await API.post('/api/auth/register', { email, password });
       setMessage(res.data); 
     } catch (err) {
       setMessage('Error during registration');
