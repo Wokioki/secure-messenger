@@ -34,19 +34,6 @@ Users can **register**, **log in**, select other users, and **exchange encrypted
 
 ---
 
-## 📡 API Endpoints
-
-### 🔐 Auth (`/api/auth`)
-- `POST /login` — User login  
-- `POST /register` — User registration  
-- `GET /users` — List of registered emails
-
-### 💬 Messages (`/api/messages`)
-- `POST /send` — Send encrypted message  
-- `GET /chat` — Get chat history (decrypted)
-
----
-
 ## 🚀 Deployment
 
 | Component   | Platform |
